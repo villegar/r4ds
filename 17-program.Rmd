@@ -5,7 +5,7 @@
 En esta parte del libro mejorarás tus habilidades de programación. La programación es una destreza transversal en todo el trabajo en ciencia de datos: es necesario usar una computadora para hacer ciencia de datos, no puedes hacerla solo con tu cabeza o con lápiz y papel.
 
 ```{r echo = FALSE, out.width = "75%"}
-knitr::include_graphics("diagrams_w_text_as_path/es/data-science-program.svg")
+knitr::include_graphics("diagrams_pdf/es/data-science-program.pdf")
 ```
 
 Programar produce código y el código es una herramienta de comunicación. Obviamente, el código le dice a la computadora qué es lo que quieres que haga, pero también comunica significado a otros seres humanos. Es importante pensar el código como un medio de comunicación, ya que todo proyecto que realices es esencialmente colaborativo. Aun cuando no estés trabajando con otras personas, definitivamente lo estarás haciendo con tu futuro yo. Escribir código claro es importante para que otras personas (o tú en el futuro) puedan entender por qué encaraste un análisis de la manera que lo hiciste. Esto significa que mejorando cómo programas mejorarás también cómo comunicas. Con el tiempo querrás que tu código resulte no solo más fácil de escribir, sino también más fácil de leer para los demás.

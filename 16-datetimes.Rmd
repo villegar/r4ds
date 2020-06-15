@@ -14,7 +14,7 @@ Las fechas y las horas son complicadas porque tienen que reconciliar dos fenóme
 
 ### Requisitos previos
 
-Este capítulo se centra en el paquete __lubridate__, que simplifica el trabajo con fechas y horas en R. __lubridate__ no es parte de los paquetes centrales de __tidyverse__ porque solo se necesita al trabajar con fechas/horas. A su vez, necesitaremos los datos sobre `vuelos` contenidos en el paquete **datos**. 
+Este capítulo se centra en el paquete __lubridate__, que simplifica el trabajo con fechas y horas en R. __lubridate__ no es parte de los paquetes centrales de __tidyverse__ porque solo se necesita al trabajar con fechas/horas. A su vez, necesitaremos los datos sobre `vuelos` contenidos en el paquete **datos**.
 
 ```{r setup, message = FALSE}
 library(tidyverse)
@@ -474,7 +474,7 @@ Para encontrar cuántos períodos caen dentro de un intervalo, tienes que usar l
 La figura \@ref(fig:dt-algebra) resume las operaciones artiméticas permitidas entre los tipos de datos.
 
 ```{r dt-algebra, echo = FALSE, fig.cap = "Las operaciones artiméticas permitidas entre pares de clases fecha/hora."}
-knitr::include_graphics("diagrams_w_text_as_path/es/datetimes-arithmetic.svg")
+knitr::include_graphics("diagrams_pdf/es/datetimes-arithmetic.pdf")
 ```
 
 ### Ejercicios

@@ -44,7 +44,7 @@ Existen tres reglas interrelacionadas que hacen que un conjunto de datos sea ord
 La figura \@ref(fig:tidy-structure) muestra estas reglas visualmente.
 
 ```{r tidy-structure, echo = FALSE, out.width = "100%", fig.cap = "Reglas que hacen que un conjunto de datos sea ordenado: las variables están en columnas, las observaciones en filas y los valores en celdas."}
-knitr::include_graphics("diagrams_w_text_as_path/es/tidy-1.svg")
+knitr::include_graphics("diagrams_pdf/es/tidy-1.pdf")
 ```
 
 Estas reglas están interrelacionadas ya que es imposible cumplir solo dos de las tres.
@@ -136,7 +136,7 @@ tabla4a %>%
 Las columnas a girar quedan seleccionadas siguiendo el estilo de notación de `dplyr::select()`. En este caso hay solo dos columnas, por lo que las listamos individualmente. Ten en consideración que "1999" y "2000" son nombres no-sintáxicos (debido a que no comienzan con una letra) por lo que los rodeamos con acentos graves (o_backticks_). Para refrescar tu memoria respecto de la selección de columnas, consulta la sección sobre [select](#select). Las variables `anio` y `casos` no existen todavpia en la `tabla4a`, por lo que tenemos que poner sus nombres entre comillas.
 
 ```{r tidy-gather, echo = FALSE, out.width = "100%", fig.cap = "Pivotar la `tabla4` para un formato 'largo' y ordenado."}
-knitr::include_graphics("diagrams_w_text_as_path/es/tidy-9.svg")
+knitr::include_graphics("diagrams_pdf/es/tidy-9.pdf")
 ```
 
 En el resultado final, las columnas pivotadas se eliminan y obtenemos la nuevas columnas `anio` y `casos`. La relación entre las variables originales se mantiene, tal como se puede observar en la Figura \@ref(fig:tidy-gather). Podemos usar `pivot_longer()` para ordenar `tabla4b` de modo similar. La única diferencia es la variable almacenada en los valores de las celdas:
@@ -181,7 +181,7 @@ tabla2 %>%
 ```
 
 ```{r tidy-spread, echo = FALSE, out.width = "100%", fig.cap = "Pivotar la `tabla2` para un formato 'ancho' y ordenado"}
-knitr::include_graphics("diagrams_w_text_as_path/es/tidy-8.svg")
+knitr::include_graphics("diagrams_pdf/es/tidy-8.pdf")
 ```
 
 Como te habrás dado cuenta a partir de sus nombres, las funciones `pivot_longer()` y `pivot_wider()` son complementarias. `pivot_longer()` genera tablas angostas y largas, `pivot_wider()` genera tablas anchas y cortas.
@@ -198,7 +198,7 @@ Como te habrás dado cuenta a partir de sus nombres, las funciones `pivot_longer
     retorno = c(1.88, 0.59, 0.92, 0.17)
   )
   acciones %>%
-    pivot_wider(names_from = anio, values_from = retorno) %>% 
+    pivot_wider(names_from = anio, values_from = retorno) %>%
     pivot_longer(`2015`:`2016`, names_to = "anio", values_to = "retorno")
   ```
 
@@ -257,7 +257,7 @@ tabla3 %>%
 ```
 
 ```{r tidy-separate, echo = FALSE, out.width = "75%", fig.cap = "Separar la `tabla3` la vuelve ordenada"}
-knitr::include_graphics("diagrams_w_text_as_path/es/tidy-17.svg")
+knitr::include_graphics("diagrams_pdf/es/tidy-17.pdf")
 ```
 
 Por defecto, `separate()` dividirá una columna donde encuentre un carácter no alfanumérico (esto es, un carácter que no es un número o letra). Por ejemplo, en el siguiente código, `separate()` divide los valores de `tasa` donde aparece una barra (`/`). Si deseas usar un carácter específico para separar una columna, puedes especificarlo en el argumento `sep` de `separate()`. Por ejemplo, el código anterior se puede re-escribir del siguiente modo:
@@ -291,7 +291,7 @@ tabla3 %>%
 `unite()` es el inverso de `separate()`: combina múltiples columnas en una única columna. Necesitarás esta función con mucha menos frecuencia que `separate()`, pero aún así es una buena herramienta para tener en el bolsillo trasero.
 
 ```{r tidy-unite, echo = FALSE, out.width = "75%", fig.cap = "Unir la `tabla5` la vuelve ordenada"}
-knitr::include_graphics("diagrams_w_text_as_path/es/tidy-18.svg")
+knitr::include_graphics("diagrams_pdf/es/tidy-18.pdf")
 ```
 
 Podemos usar `unite()` para unir las columnas *siglo* y *anio* creadas en el ejemplo anterior. Los datos están guardados en `datos::tabla5`. `unite()` toma un data frame, el nombre de la nueva variable a crear y un conjunto de columnas a combinar, las que se especifican siguiendo el estilo de la función `dplyr::select()`:
@@ -363,11 +363,11 @@ Debido a que estos valores faltantes explícitos pueden no ser tan importantes e
 
 ```{r}
 acciones %>%
-  pivot_wider(names_from = anio, values_from = retorno) %>% 
+  pivot_wider(names_from = anio, values_from = retorno) %>%
   pivot_longer(
-    cols = c(`2015`, `2016`), 
-    names_to = "anio", 
-    values_to = "retorno", 
+    cols = c(`2015`, `2016`),
+    names_to = "anio",
+    values_to = "retorno",
     values_drop_na = TRUE
   )
 ```
@@ -433,9 +433,9 @@ Existen múltiples valores faltantes en la representación actual, por lo que de
 ```{r}
 oms1 <- oms %>%
   pivot_longer(
-    cols = nuevos_fpp_h014:nuevosrecaida_m65, 
-    names_to = "clave", 
-    values_to = "casos", 
+    cols = nuevos_fpp_h014:nuevosrecaida_m65,
+    names_to = "clave",
+    values_to = "casos",
     values_drop_na = TRUE
   )
 oms1
@@ -513,8 +513,8 @@ Hemos mostrado el código parte por parte, asignando los resultados intermedios 
 oms %>%
   pivot_longer(
     cols = nuevos_fpp_h014:nuevosrecaida_m65,
-    names_to = "clave", 
-    values_to = "valor", 
+    names_to = "clave",
+    values_to = "valor",
     values_drop_na = TRUE) %>%
   mutate(clave = stringr::str_replace(clave, "nuevosrecaida", "nuevos_recaida")) %>%
   separate(clave, c("nuevos", "tipo", "sexo_edad")) %>%

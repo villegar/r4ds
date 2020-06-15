@@ -1,8 +1,8 @@
 # Flujo de trabajo: *Scripts*
 
-Hasta ahora estuviste utilizando la consola para ejecutar código. Ese es un buen punto de partida, pero verás que se vuelve incómodo rápidamente a medida que creas gráficos de **ggplot2** y *pipes* en **dplyr** más complejos. Para tener más espacio de trabajo, una buena idea es usar el editor de *script*. Ábrelo ya sea haciendo clic en el menú de Archivo (*File*), seleccionando Nuevo Archivo (*New File*), y luego Script de R (*R Script*), o bien, utilizando el atajo del teclado `Cmd/Ctrl` + `Shift` + `N`. Ahora verás cuatro paneles: 
+Hasta ahora estuviste utilizando la consola para ejecutar código. Ese es un buen punto de partida, pero verás que se vuelve incómodo rápidamente a medida que creas gráficos de **ggplot2** y *pipes* en **dplyr** más complejos. Para tener más espacio de trabajo, una buena idea es usar el editor de *script*. Ábrelo ya sea haciendo clic en el menú de Archivo (*File*), seleccionando Nuevo Archivo (*New File*), y luego Script de R (*R Script*), o bien, utilizando el atajo del teclado `Cmd/Ctrl` + `Shift` + `N`. Ahora verás cuatro paneles:
 ```{r echo = FALSE, out.width = "75%"}
-knitr::include_graphics("diagrams_w_text_as_path/es/rstudio-editor.svg")
+knitr::include_graphics("diagrams_pdf/es/rstudio-editor.pdf")
 ```
 El editor de *script* es un excelente espacio para colocar el código que te importa. Continúa experimentando en la consola, pero una vez que has escrito un código que funciona y hace lo que quieres, colócalo en el editor de *script*. RsStudio guardará automáticamente los contenidos del editor cuando salgas del programa, y los cargará automáticamente cuando vuelvas a abrirlo. De todas formas, es una buena idea que guardes los *scripts* regularmente y que los respaldes.
 
@@ -10,16 +10,16 @@ El editor de *script* es un excelente espacio para colocar el código que te imp
 ## Ejecutando código
 
 
-El editor de *script* es también un excelente espacio para desarrollar gráficos de **ggplot2** complejos o largas secuencias de manipulación con **dplyr**. La clave para utilizar el editor de *script* efectivamente es memorizar uno de los atajos del teclado más importantes: Cmd/Ctrl + Enter. Esto ejecuta la expresión actual de R en la consola. Por ejemplo, toma el código de abajo. Si tu cursor está sobre `no_cancelado <- vuelos %>%`, presionar `Cmd/Ctrl` + `Enter` ejecutará el comando completo que genera `no_cancelado`. También moverá el cursor al siguiente enunciado (que comienza con `no_cancelado %>%`). Esto facilita ejecutar todo tu *script* presionando repetidamente Cmd/Ctrl + Enter.
+El editor de *script* es también un excelente espacio para desarrollar gráficos de **ggplot2** complejos o largas secuencias de manipulación con **dplyr**. La clave para utilizar el editor de *script* efectivamente es memorizar uno de los atajos del teclado más importantes: Cmd/Ctrl + Enter. Esto ejecuta la expresión actual de R en la consola. Por ejemplo, toma el código de abajo. Si tu cursor está sobre XX, presionar `Cmd/Ctrl` + `Enter` ejecutará el comando completo que genera `no_cancelado`. También moverá el cursor al siguiente enunciado (que comienza con `no_cancelado %>%`). Esto facilita ejecutar todo tu *script* presionando repetidamente Cmd/Ctrl + Enter.
 
 
 ```{r, eval = FALSE}
 library(dplyr)
 library(datos)
-no_cancelado <- vuelos %>% 
+no_cancelado <- vuelos %>%
   filter(!is.na(atraso_salida), !is.na(atraso_llegada))
-no_cancelado %>% 
-  group_by(anio, mes, dia) %>% 
+no_cancelado %>%
+  group_by(anio, mes, dia) %>%
   summarise(media = mean(atraso_salida))
 ```
 
@@ -37,7 +37,7 @@ El editor de *script* resaltará errores de sintaxis con una línea roja serpent
 knitr::include_graphics("screenshots/rstudio-diagnostic.png")
 ```
 
-Sitúate sobre la cruz para ver cuál es el problema: 
+Sitúate sobre la cruz para ver cuál es el problema:
 
 ```{r echo = FALSE, out.width = NULL}
 knitr::include_graphics("screenshots/rstudio-diagnostic-tip.png")
@@ -51,6 +51,6 @@ knitr::include_graphics("screenshots/rstudio-diagnostic-warn.png")
 
 ## Ejercicios
 
-1. Visita la cuenta de Twitter de RStudio Tips, <https://twitter.com/rstudiotips>, y encuentra algún *tip* que parezca interesante. Practica utilizándolo.
+1.  Visita la cuenta de Twitter de RStudio Tips, <https://twitter.com/rstudiotips>, y encuentra algún *tip* que parezca interesante. Practica utilizándolo.
 
 2. ¿Qué otros errores comunes reportarán los diagnósticos de RStudio? Lee <https://support.rstudio.com/hc/en-us/articles/205753617-Code-Diagnostics> para descubrirlo.
