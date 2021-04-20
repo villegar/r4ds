@@ -108,7 +108,7 @@ Otro enfoque es abandonar la asignación y encadenar todas las llamadas a las fu
 ```{r, eval = FALSE}
 golpear(
   recoger(
-    saltar(foo_foo, por_el = bosque),
+    saltar(foo_foo, a_traves = bosque),
     que = raton_de_campo
   ),
   en = la_cabeza
@@ -123,7 +123,7 @@ Finalmente, podemos usar el pipe:
 
 ```{r, eval = FALSE}
 foo_foo %>%
-  saltar(a_través = bosque) %>%
+  saltar(a_traves = bosque) %>%
   recoger(que = ratones_campo) %>%
   golpear(en = cabeza)
 ```
